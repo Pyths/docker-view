@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import jsonify
+from shell_docker import *
 
 
 app = Flask(__name__)
@@ -12,12 +13,12 @@ def get_index():
 #get image list from terminal
 @app.route('/images')
 def get_docker_images():
-    return "List of images"
+    return get_docker_images_json()
 
 #get container list from terminal
 @app.route('/containers')
 def get_docker_containers():
-    return "List of containers"
+    return get_docker_containers_json()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8065')
