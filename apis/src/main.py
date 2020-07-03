@@ -1,9 +1,10 @@
 from flask import Flask
 from flask import jsonify
 from shell_docker import *
-
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 #check app running
 @app.route('/')
